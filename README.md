@@ -22,7 +22,7 @@ nano /etc/udev/rules.d/99-mouse-mchose.rules
 ```
 ### Paste the following line into the file, making sure to include your specific mouse Vendor ID and Product ID:
 ```bash
-SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3837", ATTRS{idProduct}=="100b", TAG+="uaccess"
+KERNEL=="hidraw*", ATTRS{idVendor}=="3837", ATTRS{idProduct}=="100b", MODE="0666", TAG+="uaccess"
 ```
 ### Reload udev rules
 ```bash
